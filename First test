@@ -1,0 +1,51 @@
+let img = [];
+let randImage = 0;
+let showImage = false
+let randomImage = false
+
+function preload() {
+  for (let i = 0; i < 4; i++) {
+    img[i] = loadImage('abc/' + i + '.png')
+  }
+}
+
+function setup() {
+  // image(img[3], 0, 0);
+  createCanvas(400, 400);
+  frameRate(15);
+}
+
+
+
+function draw() {
+  //background(220);
+  //image(img[randImage],0,0); 
+
+  background(220);
+  textSize(60)
+  image(img[randImage], 0, 0);
+  text(randImage, 180, 220);
+  if (showImage) {
+    randImage = int(random(1, 3));
+  }
+  if (randomImage) {
+    randImage = int(random(0, 2));
+  }
+}
+
+function mouseClicked() {
+  randomImage = !randomImage
+  // image(img[i],0,0)
+}
+
+function keyPressed() {
+  showImage = !showImage
+
+
+  // randImage = int(random(1, 3));
+  // if (keyCode === LEFT_ARROW) {
+  //   randImage = 0;
+  // } else if (keyCode === RIGHT_ARROW) {
+  //   randImage = 1;
+  // }
+}
